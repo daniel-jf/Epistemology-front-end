@@ -5,7 +5,7 @@ const Landing = () => {
   return (
     <div className="main">
       <div className="header-img">
-      <div className="col-md-5 p-lg-5 mx-auto my-5">
+      <div className="col-md-5 p-lg-5 justify-content-end my-5">
         <h1 className="display-4 font-weight-normal">Epistemology</h1>
       </div>
     </div>

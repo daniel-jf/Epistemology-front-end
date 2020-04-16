@@ -4,6 +4,7 @@ import setAuthHeader from '../../utils/setAuthHeader';
 import Routes from '../../config/routes';
 import UserAPI from '../../api/UserAPI';
 import Header from '../../layout/Header';
+import Footer from '../../layout/Footer';
 import './App.css';
 
 class App extends React.Component {
@@ -83,7 +84,7 @@ class App extends React.Component {
           login={this.login}
           register={this.register}
         />
-        {/* <Footer /> */}
+        <Footer />
       </div>
     )
   }

@@ -14,5 +14,5 @@ const login = (user) => {
 
 export default {
   register,
-  login
+  login,
 }

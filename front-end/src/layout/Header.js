@@ -8,7 +8,10 @@ const Header = (props) => {
   return (
     <div id="header">
         <div className="Nav">
-          <NavBar />
+          <NavBar 
+            logout={props.logout}
+            user={props.user}
+          />
        </div>
     </div>
   )
