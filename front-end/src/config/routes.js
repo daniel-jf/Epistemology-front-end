@@ -5,8 +5,8 @@ import Register from '../components/auth/Register/register';
 import Login from '../components/auth/Login/login';
 import Profile from '../components/Profile/Profile';
 import Learn from '../components/Learn/Learn';
-import LearningStyle from '../components/LearningStyle/LearningStyle';
-
+import LessonsPage from '../components/LessonsPage/Lessons';
+import RWStyle from '../components/LessonsPage/RWStyle';
 
 const Routes = (props) => {
   return (
@@ -40,6 +40,14 @@ const Routes = (props) => {
       <Route
         exact path='/learn'
         component={ Learn }
+      />
+      <Route
+        exact path='/lessons'
+        component={ LessonsPage }
+      />
+      <Route
+        exact path='/RW'
+        component={ RWStyle }
       />
     </Switch>
   )
