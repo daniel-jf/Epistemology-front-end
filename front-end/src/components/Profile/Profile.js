@@ -1,7 +1,7 @@
 import React from 'react';
 import './Profile.css';
 import AboutContainer from '../../containers/AboutProfileContainer/AboutContainer';
-
+import UpdateProfileForm from './UpdateProfile';
 class Profile extends React.Component {
     render() {
       console.log(this.props.user);
@@ -16,8 +16,7 @@ class Profile extends React.Component {
                                 <h4>First Name: </h4>
                                 <h4>Last Name: </h4>
                                 <h4>Email: </h4>
-                                <a className="btn btn-info m-1" href="EditProfileForm">Update</a>
-                                <a className="btn btn-info m-1" href="EditProfileForm">Delete</a>
+                                <a className="btn btn-info m-1" href="/UpdateProfileForm">Update</a>
                             </div>
                           </div>
                         </div>
