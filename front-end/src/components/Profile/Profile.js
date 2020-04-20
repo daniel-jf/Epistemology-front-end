@@ -1,10 +1,19 @@
 import React from 'react';
 import './Profile.css';
 import AboutContainer from '../../containers/AboutProfileContainer/AboutContainer';
-import UpdateProfileForm from './UpdateProfile';
+import UserAPI from '../../api/UserAPI';
 class Profile extends React.Component {
+  // state={
+  //   user: {
+  //     firstName:'Daniel',
+  //     lastName:'Francisco',
+  //     email: 'daniel@email.com'
+  //   }
+  // }
+  componentDidMount(){
+    console.log(this.props.user)
+  }
     render() {
-      console.log(this.props.user);
         return (
             <div className="main-profile">
                 <div className="container-fluid">
@@ -13,10 +22,9 @@ class Profile extends React.Component {
                           <div id="card" className="card" style={{top: 300 }}>
                             <img id="img" className="img-fluid rounded mx-auto d-block m-3" alt="user-placeholder" src="https://ringwooddental.com.au/wp-content/uploads/2018/05/profile-placeholder-f-e1526434202694.jpg" />
                             <div id="header" style={{top: -100 }} className="card-header">
-                                <h4>First Name: </h4>
-                                <h4>Last Name: </h4>
-                                <h4>Email: </h4>
-                                <a className="btn btn-info m-1" href="/UpdateProfileForm">Update</a>
+                                <h4>Userame:{this.props.user.username} </h4>
+                                <h4>Email: {this.props.user.user}</h4>
+                                <a className="btn btn-info m-1 edit" href="/editprofileform">Update</a>
                             </div>
                           </div>
                         </div>

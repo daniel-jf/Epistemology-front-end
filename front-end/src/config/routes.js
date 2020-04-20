@@ -7,6 +7,8 @@ import Profile from '../components/Profile/Profile';
 import Learn from '../components/Learn/Learn';
 import LessonsPage from '../components/LessonsPage/Lessons';
 import RWStyle from '../components/LessonsPage/RWStyle';
+import UpdateProfileForm from '../components/Profile/UpdateProfile';
+import DeleteProfileForm from '../components/Profile/DeleteProfileForm';
 
 const Routes = (props) => {
   return (
@@ -18,7 +20,7 @@ const Routes = (props) => {
       <Route
         path='/register'
         render={
-          () => props.user ? 
+          () => props.user.user ? 
                   <Redirect to="/login" />
                 :
                   <Register register={props.register} />
@@ -27,7 +29,7 @@ const Routes = (props) => {
       <Route
         path='/login'
         render={
-          () => props.user ?
+          () => props.user.user ?
                   <Redirect to="/learn" />
                 :
                 <Login login={props.login} />
@@ -35,7 +37,7 @@ const Routes = (props) => {
       />
       <Route
         exact path='/profile'
-        component={ Profile } 
+        render={() => props.user.id ? <Profile user={ props.user }/> : ""} 
       />
       <Route
         exact path='/learn'
@@ -49,6 +51,8 @@ const Routes = (props) => {
         exact path='/RW'
         component={ RWStyle }
       />
+      <Route path='/editprofileform' component={ UpdateProfileForm } />
+      <Route path='/deleteprofileform' component={ DeleteProfileForm } />
     </Switch>
   )
 }

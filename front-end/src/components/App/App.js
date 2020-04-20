@@ -10,17 +10,19 @@ import './App.css';
 class App extends React.Component {
    state = {
     user: '',
-    id: ''
+    username: '',
+    id: '',
   }
 
-  componentDidMount() {
+  componentDidlMount() {
     // if there's a token in local storage
     if (localStorage.jwtToken) {
       setAuthHeader(localStorage.jwtToken);
       const decoded = jwt_decode(localStorage.getItem('jwtToken'));
       this.setState({
         user: decoded.email,
-        id: decoded._id
+        id: decoded._id,
+        username: decoded.username,
       })
     }
   }
@@ -36,7 +38,8 @@ class App extends React.Component {
           const decoded = jwt_decode(token);
           this.setState({
             user: decoded.email,
-            id: decoded._id
+            id: decoded._id,
+            username: res.data.username,
           })
         }
       })
@@ -52,10 +55,12 @@ class App extends React.Component {
         localStorage.setItem('jwtToken', token);
         setAuthHeader(token);
         const decoded = jwt_decode(token);
+        console.log(res)
         // set the state to the decoded user information
         this.setState({
           user: decoded.email,
-          id: decoded._id
+          id: decoded._id,
+          username: res.data.username,
         })
       }
     })
@@ -80,7 +85,7 @@ class App extends React.Component {
           user={this.state.user}
         />
          <Routes 
-          user={this.state.user}
+          user={this.state}
           login={this.login}
           register={this.register}
         />

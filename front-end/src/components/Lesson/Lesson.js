@@ -6,7 +6,6 @@ import LessonContainer from '../../containers/LessonContainer/LessonContainer';
 
 class LessonCard extends React.Component {
   render(){
-    console.log(this.props)
     return(
         <div>
           <div class="card">

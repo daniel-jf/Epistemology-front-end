@@ -2,8 +2,7 @@ import React from 'react';
 
 class Register extends React.Component {
   state = {
-    firstName: '',
-    lastName:'',
+    userame: '',
     email: '',
     password: '',
   }
@@ -17,8 +16,7 @@ class Register extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     let newUser = {
-      firstName: this.state.firstName,
-      lastName: this.state.lastName,
+      username: this.state.username,
       email: this.state.email,
       password: this.state.password
     }
@@ -29,21 +27,13 @@ class Register extends React.Component {
   render() {
     return(
       <div className="register">
+        <div className="text-center">
         <form onSubmit={this.handleSubmit}>
-        <label>First Name: 
+          <label>Username: 
             <input
               type="text"
-              name="firstName"
-              value={this.state.firstName}
-              onChange={this.handleChange}>
-            </input>
-          </label>
-          <br />
-          <label>Last Name: 
-            <input
-              type="text"
-              name="lastName"
-              value={this.state.lastName}
+              name="username"
+              value={this.state.username}
               onChange={this.handleChange}>
             </input>
           </label>
@@ -68,6 +58,7 @@ class Register extends React.Component {
           <br />
           <button type="submit">Submit</button>
         </form>
+      </div>
       </div>
     )
   }
