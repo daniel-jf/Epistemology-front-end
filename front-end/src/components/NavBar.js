@@ -15,8 +15,11 @@ const NavBar = (props) => {
                         <Link to='/' className="nav-link active">Home</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/Play" className="nav-link">Play</Link>
+                        <Link to="/about" className="nav-link active">About</Link>
                     </li>
+                    {/* <li className="nav-item">
+                        <Link to="/Play" className="nav-link">Play</Link>
+                    </li> */}
                     <li className="nav-item">
                         <Link to='/learn' className="nav-link">Learn</Link>
                     </li>
@@ -31,7 +34,7 @@ const NavBar = (props) => {
              : <div className="login">
                 <ul className="nav justify-content-end">
                     <li className="nav-item">
-                        <Link to="/" className="nav-link active">About</Link>
+                        <Link to="/about" className="nav-link active">About</Link>
                     </li>
                     <li className="nav-item">
                         <Link to='/register' className="nav-link">Sign-Up</Link>

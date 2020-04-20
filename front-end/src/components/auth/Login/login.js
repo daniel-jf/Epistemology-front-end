@@ -25,7 +25,7 @@ class Login extends React.Component {
     return(
       
       <div className="login container">
-        <div className="mt-4 border align-self-center">
+        <div className="mt-5 text-center align-self-center">
           <h2 className="text-center">Login to get learning!</h2>
         <form onSubmit={this.handleSubmit}>
           <label>Email: 

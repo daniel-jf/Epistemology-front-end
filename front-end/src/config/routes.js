@@ -8,6 +8,7 @@ import Learn from '../components/Learn/Learn';
 import LessonsPage from '../components/LessonsPage/Lessons';
 import UpdateProfileForm from '../components/Profile/UpdateProfile';
 import DeleteProfileForm from '../components/Profile/DeleteProfileForm';
+import About from '../AboutMe/About';
 
 const Routes = (props) => {
   return (
@@ -15,6 +16,10 @@ const Routes = (props) => {
       <Route
         exact path='/'
         component={ Home }
+      />
+      <Route 
+        exact path='/about'
+        component ={ About }
       />
       <Route
         path='/register'
@@ -38,7 +43,8 @@ const Routes = (props) => {
         path='/profile'
         render={
           () => props.user.id ? 
-          <Profile user={ props.user }/> : ""} 
+                <Profile user={ props.user }/>
+              : <Redirect to="/login" />} 
       />
       <Route
         exact path='/learn'

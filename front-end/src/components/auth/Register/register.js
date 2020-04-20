@@ -27,7 +27,8 @@ class Register extends React.Component {
   render() {
     return(
       <div className="register">
-        <div className="text-center">
+        <div className="text-center mt-5">
+        <h2>Sign-up to get learning!</h2>
         <form onSubmit={this.handleSubmit}>
           <label>Username: 
             <input
