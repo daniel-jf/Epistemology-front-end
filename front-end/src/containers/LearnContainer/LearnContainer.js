@@ -4,7 +4,7 @@ import LessonCard from '../../components/Lesson/Lesson';
 class LearnContainer extends React.Component {
   render() {
     return(
-        <div className="col-md-6">
+        <div>
           { this.props.subjects && this.props.subjects.map((subject, id) => 
           <LessonCard
           subject = {subject}

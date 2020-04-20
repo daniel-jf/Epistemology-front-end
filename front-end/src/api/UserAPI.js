@@ -8,19 +8,16 @@ const endpoint = 'http://localhost:4000/api/v1';
     .then(res => res);
 }
 
- const login = (user) => {
+const login = (user) => {
   return axios.post(`${endpoint}/login`, user)
     .then(res => res);
 }
 
- const update = (user, payload) => {
-  console.log(user, payload)
-  let request = axios.put(endpoint+'/users/'+user._id, payload);
-  return request;
+const update = (user) => {
+  let request = axios.put(`${endpoint}/${user._id}`, user);
+  return request
 }
- const show = (id) => {
-  return axios.get(endpoint+'/users/'+id);
-}
+
 export default {
   register,
   login,

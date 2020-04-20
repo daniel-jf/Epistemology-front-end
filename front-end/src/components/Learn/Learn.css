@@ -5,3 +5,22 @@
     margin-top: 20px;
     margin-bottom: 50px;
 }
+
+.lessonContainer {
+    padding-left: 120px;
+    padding-right: 160px;
+}
+.cardLesson {
+    border: 2px solid;
+    border-radius: 10px;
+    padding-right: -30px;
+}
+
+.lessonCardTitle{
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.bodyLesson{
+    padding-right: -30px;
+}
