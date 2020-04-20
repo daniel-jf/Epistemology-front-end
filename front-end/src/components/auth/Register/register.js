@@ -2,9 +2,9 @@ import React from 'react';
 
 class Register extends React.Component {
   state = {
+    userame: '',
     email: '',
     password: '',
-    password2: ''
   }
 
   handleChange = (event) => {
@@ -16,16 +16,29 @@ class Register extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     let newUser = {
+      username: this.state.username,
       email: this.state.email,
       password: this.state.password
     }
     this.props.register(newUser);
+    console.log(newUser);
   }
 
   render() {
     return(
       <div className="register">
+        <div className="text-center mt-5">
+        <h2>Sign-up to get learning!</h2>
         <form onSubmit={this.handleSubmit}>
+          <label>Username: 
+            <input
+              type="text"
+              name="username"
+              value={this.state.username}
+              onChange={this.handleChange}>
+            </input>
+          </label>
+          <br />
           <label>Email: 
             <input
               type="text"
@@ -44,17 +57,9 @@ class Register extends React.Component {
             </input>
           </label>
           <br />
-          <label>Re-enter Password: 
-            <input
-              type="password"
-              name="password2"
-              value={this.state.password2}
-              onChange={this.handleChange}>
-            </input>
-          </label>
-          <br />
           <button type="submit">Submit</button>
         </form>
+      </div>
       </div>
     )
   }

@@ -23,7 +23,10 @@ class Login extends React.Component {
 
   render() {
     return(
-      <div className="login">
+      
+      <div className="login container">
+        <div className="mt-5 text-center align-self-center">
+          <h2 className="text-center">Login to get learning!</h2>
         <form onSubmit={this.handleSubmit}>
           <label>Email: 
             <input
@@ -45,6 +48,7 @@ class Login extends React.Component {
           <br />
           <button type="submit">Submit</button>
         </form>
+      </div>
       </div>
     )
   }

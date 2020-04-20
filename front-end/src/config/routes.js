@@ -1,14 +1,15 @@
 import React from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import Home from '../components/Home/Home';
-//import DoggoContainer from '../containers/DoggoContainer/DoggoContainer';
 import Register from '../components/auth/Register/register';
 import Login from '../components/auth/Login/login';
+import Profile from '../components/Profile/Profile';
+import Learn from '../components/Learn/Learn';
+import LessonsPage from '../components/LessonsPage/Lessons';
+import UpdateProfileForm from '../components/Profile/UpdateProfile';
+import DeleteProfileForm from '../components/Profile/DeleteProfileForm';
+import About from '../AboutMe/About';
 
-// routes contains a lot of ternary statements
-// these are largely designed to see if the user is logged in (via the App component's state, passed down as props)
-// if the user is not logged in, it will redirect them to login
-// if the user tries to go to /register or /login, but IS logged in, it will redirect them to /doggos
 const Routes = (props) => {
   return (
     <Switch>
@@ -16,10 +17,14 @@ const Routes = (props) => {
         exact path='/'
         component={ Home }
       />
+      <Route 
+        exact path='/about'
+        component ={ About }
+      />
       <Route
         path='/register'
         render={
-          () => props.user ? 
+          () => props.user.user ? 
                   <Redirect to="/login" />
                 :
                   <Register register={props.register} />
@@ -28,12 +33,29 @@ const Routes = (props) => {
       <Route
         path='/login'
         render={
-          () => props.user ?
-                  <Redirect to="/" />
+          () => props.user.user ?
+                  <Redirect to="/learn" />
                 :
                 <Login login={props.login} />
         }
       />
+      <Route
+        path='/profile'
+        render={
+          () => props.user.id ? 
+                <Profile user={ props.user }/>
+              : <Redirect to="/login" />} 
+      />
+      <Route
+        exact path='/learn'
+        component={ Learn }
+      />
+      <Route
+        exact path='/lessons'
+        component={ LessonsPage }
+      />
+      <Route path='/editprofileform' component={ UpdateProfileForm } />
+      <Route path='/deleteprofileform' component={ DeleteProfileForm } />
     </Switch>
   )
 }

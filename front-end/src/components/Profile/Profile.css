@@ -1,0 +1,20 @@
+.main-profile{
+    background-image: url('../../layout/images/Landing-Page-img.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(18.09% 18.09% 18.09%);
+}
+#img{
+    height: 200px;
+    position: relative;
+    top: -110px;
+}
+#card{
+    height: 400px;
+    position: relative;
+    top: 20px;
+    bottom: 50px;
+}
+#header{
+    position: relative;
+}
